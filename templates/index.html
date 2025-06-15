@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelompok 6 - KASD</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: linear-gradient(90deg, #427d9d, #164863);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        h1, h3 {
+            margin: 0;
+            padding: 0;
+            color: #ffffff;
+        }
+        h4 {
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        h2 {
+            margin-top: 20px;
+            border-bottom: 2px solid ;
+            padding-bottom: 10px;
+            color: #427d9d;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .data {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .data th, .data td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            transition: background-color 0.3s ease;
+        }
+        .data th {
+            background-color: #427d9d;
+            color: white;
+        }
+        .data tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .data tr:hover {
+            background-color: #f1f1f1;
+        }
+        .gains, .entropies, form {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+        }
+        form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+        form input[type="text"],
+        form select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+        form input[type="text"]:focus,
+        form select:focus {
+            border-color: #427d9d;
+            outline: none;
+        }
+        form input[type="submit"] {
+            background-color: #427d9d;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        form input[type="submit"]:hover {
+            background-color: #164863;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Penambangan Data</h1>
+        <h3>Algoritma Decision Tree (Keputusan Nelayan untuk berlayar atau tidak)</h3>
+    </header>
+    <div class="container">
+        <h2>Data Latih</h2>
+        {{ tables|safe }}
+
+        <h2>Akurasi Model</h2>
+        <p>Akurasi model: {{ accuracy * 100 }}%</p>
+
+        <h2>Gain</h2>
+        <ul>
+        {% for feature, gain in gains.items() %}
+            <li>{{ feature }}: {{ gain }}</li>
+        {% endfor %}
+        </ul>
+
+        <h2>Input Nilai Uji</h2>
+        <form action="/predict" method="post">
+            <label for="WindSpeed">Wind Speed:</label>
+            <select id="WindSpeed" name="Wind Speed">
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+
+            <label for="WaveHeight">Wave Height:</label>
+            <select id="WaveHeight" name="Wave Height">
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+
+            <label for="Weather">Weather:</label>
+            <select id="Weather" name="Weather">
+                <option value="Sunny">Sunny</option>
+                <option value="Cloudy">Cloudy</option>
+                <option value="Rainy">Rainy</option>
+            </select>
+
+            <label for="DayOfWeek">Day of the Week:</label>
+            <select id="DayOfWeek" name="Day of the Week">
+                <option value="Weekday">Weekday</option>
+                <option value="Weekend">Weekend</option>
+            </select>
+
+            <label for="TechnicalCondition">Technical Condition:</label>
+            <select id="TechnicalCondition" name="Boat Technical Condition">
+                <option value="Poor">Poor</option>
+                <option value="Average">Average</option>
+                <option value="Good">Good</option>
+            </select>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
