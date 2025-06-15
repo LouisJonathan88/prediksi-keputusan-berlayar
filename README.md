@@ -3,7 +3,7 @@
 Aplikasi prediksi keputusan berlayar berdasarkan data Wind Speed, Wave Height, Weather, Day of the Week, Boat Technical Condition, menggunakan Flask dan Decision Tree Classifier.
 
 ## Fitur:
-- Input kondisi Wind Speed,Wave Height,Weather,Day of the Week,Boat Technical Condition, melalui web
+- Input kondisi Wind Speed,Wave Height,Weather,Day of the Week,Boat Technical Condition
 - Prediksi apakah "Berlayar" atau "Tidak Berlayar"
 - Menampilkan akurasi model Decision Tree
 - Perhitungan Information Gain setiap fitur
