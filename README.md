@@ -17,20 +17,19 @@ Aplikasi prediksi keputusan berlayar berdasarkan data Wind Speed, Wave Height, W
 - HTML
 
 ## Cara Menjalankan
-
-1. **Clone repository ini**:
-   ```bash
+1. Clone repository:
+     ```bash
    git clone https://github.com/LouisJonathan88/prediksi-keputusan-berlayar.git
    cd prediksi-keputusan-berlayar
-
-2.Install dependensi:
+   ```
+2. Install dependensi:
 - pip install flask
 - pip install pandas
 - pip install numpy
 - pip install scikit-learn
 
-2. Jalankan program:
+3. Jalankan program:
 python program.py
 
-3. Akses di browser:
+4. Akses di browser:
 http://localhost:5000
