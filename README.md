@@ -28,8 +28,10 @@ Aplikasi prediksi keputusan berlayar berdasarkan data Wind Speed, Wave Height, W
    ```
 
 3. Jalankan program:
-```bash
-python program.py
-```
+   ```bash
+   python program.py
+   ```
 4. Akses di browser:
-http://localhost:5000
+   ```bash
+   http://localhost:5000
+   ```
