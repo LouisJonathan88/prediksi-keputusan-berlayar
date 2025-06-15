@@ -9,8 +9,14 @@ Aplikasi prediksi keputusan berlayar berdasarkan data Wind Speed, Wave Height, W
 - Perhitungan Information Gain setiap fitur
 - Dataset otomatis diperbarui setelah prediksi
 
+## Teknologi yang Digunakan
+- Python
+- Flask
+- Scikit-Learn (Decision Tree)
+- Pandas, NumPy
+- HTML
 
-## ▶️ Cara Menjalankan
+## Cara Menjalankan
 
 1. **Clone repository ini**:
    ```bash
