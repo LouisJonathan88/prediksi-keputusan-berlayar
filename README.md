@@ -23,13 +23,13 @@ Aplikasi prediksi keputusan berlayar berdasarkan data Wind Speed, Wave Height, W
    cd prediksi-keputusan-berlayar
    ```
 2. Install dependensi:
-- pip install flask
-- pip install pandas
-- pip install numpy
-- pip install scikit-learn
+   ```bash
+   pip install flask pandas numpy scikit-learn
+   ```
 
 3. Jalankan program:
+```bash
 python program.py
-
+```
 4. Akses di browser:
 http://localhost:5000
